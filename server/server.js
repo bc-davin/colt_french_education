@@ -8,6 +8,7 @@ app.use(express.json())
 // Use user routes
 app.use('/api/users', userRoutes);
 
+
 app.get("/api/home", (req, res) =>{
     res.json({message: "Hello World!"});
 });
@@ -25,3 +26,4 @@ const startServer = async () => {
 };
 
 startServer();
+

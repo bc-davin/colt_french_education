@@ -1,6 +1,22 @@
-import React from 'react';
+'use client';
+import React, {useEffect, useState} from 'react';
 
 function LoginForm() {
+
+  const [user, setUser] = useState("Loading");
+  const [password, setPassword] = useState("Loading");
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/userInfo").then(
+      response => response.json()
+    ).then(
+      data => {
+        console.log(data)
+        setUser(data.user)
+        setPassword(data.password)
+      }
+    )
+  }, []);
   return (
     <div className="flex justify-center items-center h-screen bg-gray-50">
       <div className="bg-white p-8 rounded-lg shadow-md w-200">
@@ -48,6 +64,11 @@ function LoginForm() {
             <a href="/signup" className="text-sm text-blue-500 hover:underline">Request to create your account</a>
           </div>
         </form>
+        <div>
+          {user}
+          <br></br>
+          {password}
+        </div>
 
         <footer className="mt-6 text-xs text-gray-500 text-center">
           © 2016 HOKKAIDO UNIVERSITY OF EDUCATION all rights reserved.
