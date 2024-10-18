@@ -5,12 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev":  "nodemon server"
+    "dev": "nodemon server"
   },
   "author": "Mathew Maki & Davin M.",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.1"
   },
   "devDependencies": {
